@@ -23,33 +23,36 @@
 */
 
 // Solution *not efficient performance
-// export const countTrailingZeros = (base: number, num: number) => {
-//   let trailing = 0;
-//   let factor = factorial(num).toString(base);
+/* 
+export const countTrailingZeros = (base: number, num: number) => {
+  let trailing = 0;
+  let factor = factorial(num).toString(base);
 
-//   while (factor.endsWith("0")) {
-//     trailing++;
-//     factor = factor.slice(0, -1);
-//   }
+  while (factor.endsWith("0")) {
+    trailing++;
+    factor = factor.slice(0, -1);
+  }
 
-//   return trailing;
-// };
+  return trailing;
+};
 
-// function factorial(n: number) {
-//   let result = BigInt(1);
+function factorial(n: number) {
+  let result = BigInt(1);
 
-//   for (let i = 2; i <= n; i++) {
-//     result *= BigInt(i);
-//   }
+  for (let i = 2; i <= n; i++) {
+    result *= BigInt(i);
+  }
 
-//   return result;
-// }
+  return result;
+}
 
-// // // Manual Test
-// console.log(countTrailingZeros(10, 10)); // should be => 2
-// console.log(countTrailingZeros(16, 16)); // should be => 3
+// // Manual Test
+console.log(countTrailingZeros(10, 10)); // should be => 2
+console.log(countTrailingZeros(16, 16)); // should be => 3
+ */
 
 
+// Improvement Code
 // Note
 /* 
     - first, calculate the highest power of Base (p) that divides Factorial Number (n)! using
