@@ -65,16 +65,28 @@
 // // Improved Code
 function primeFactors(n: number): number[] {
   const factors: Set<number> = new Set();
+  // eg: n = 15 (step 1)
 
+  // i = 2; i < Math.sqrt(15) 3.8.. :true ; i++ (step 2)
+  // i = 3; i < Math.sqrt(15) 3.8.. :true ; i++ (step 4)
+  // i = 4; i < Math.sqrt(5) 2.2..  :false      (step 9)
   for (let i = 2; i <= Math.sqrt(n); i++) {
+
+    // i = 2: 15 % 2 == 0 ? false        (step 3)
+
+    // i = 3; 15 % 3 == 0? true          (step 5)
+    // i = 3; 5 % 3 == 0? false          (step 8)
     while (n % i === 0) {
       factors.add(i);
+      // factors = [3]                   (step 6)
       n /= i;
+      // n = n:15 / 3 = 5                (step 7)
     }
   }
 
+  // n = 5, n > 1: true                 (step 10)
   if (n > 1) {
-    factors.add(n);
+    factors.add(n); // factors[3, 5]    (step 11)
   }
 
   return Array.from(factors);
