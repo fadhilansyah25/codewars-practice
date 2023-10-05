@@ -4,6 +4,7 @@ function factorial(n: number): number {
   return n * factorial(n - 1);
 }
 
+// menggunakan iteration
 function fact(n: number) {
   let total = 1;
   while (n > 1) {
@@ -15,3 +16,4 @@ function fact(n: number) {
 }
 
 console.log(factorial(5));
+console.log(fact(5));
